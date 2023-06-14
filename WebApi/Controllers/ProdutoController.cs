@@ -30,15 +30,18 @@ namespace WebApi.Controllers
         [Produces("application/json")]
         public async Task<object> AdicionarProduto(Produto produto)
         {
-            try
-            {
-                await _IProdutoService.AdicionarProduto(produto);
-                return Ok("Produto cadastrado com sucesso");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
-            }
+            //try
+            //{
+            //    await _IProdutoService.AdicionarProduto(produto);
+            //    return Ok("Produto cadastrado com sucesso");
+            //}
+            //catch (Exception ex)
+            //{
+            //    return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            //}
+
+            await _IProdutoService.AdicionarProduto(produto);
+            return Task.FromResult(produto);
         }
 
         [HttpPost("/api/AtualizarProduto")]

@@ -37,9 +37,7 @@ namespace Infra.Repositorio
         {
             using (var banco = new ContextBase(_OptionsBuilder))
             {
-                return await banco.Produto.Include(f => f.Codigo)
-                    .AsNoTracking()
-                    .ToListAsync();
+                return await banco.Produto.AsNoTracking().ToListAsync();
             }
         }
 
@@ -58,7 +56,7 @@ namespace Infra.Repositorio
         {
             using (var banco = new ContextBase(_OptionsBuilder))
             {
-                return await banco.Produto.Include(f => f.NomeProduto)
+                return await banco.Produto
                     .Where(f => f.NomeProduto == nome)
                     .AsNoTracking()
                     .ToListAsync();

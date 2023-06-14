@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Migrations
 {
     [DbContext(typeof(ContextBase))]
-    [Migration("20230614193733_InitialMigration")]
+    [Migration("20230614230504_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -133,11 +133,11 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("Entitities.Entidades.Produto", b =>
                 {
-                    b.Property<int?>("Codigo")
+                    b.Property<int>("Codigo")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Codigo"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Codigo"));
 
                     b.Property<string>("Categoria")
                         .IsRequired()

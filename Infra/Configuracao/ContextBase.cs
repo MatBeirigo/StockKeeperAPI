@@ -6,7 +6,7 @@ namespace Infra.Configuracao
 {
     public class ContextBase : IdentityDbContext<ApplicationUser>
     {
-        public ContextBase(DbContextOptions options) : base(options) { }
+        public ContextBase(DbContextOptions<ContextBase> options) : base(options) { }
         public DbSet<Funcionario> Funcionario { get; set; }
         public DbSet<Produto> Produto { get; set; }
 
@@ -30,7 +30,7 @@ namespace Infra.Configuracao
 
         public string ObterStringConexao()
         {
-            return Database.GetDbConnection().ConnectionString;
+            return "Data Source=DESKTOP-BEIRIGO;Initial Catalog=StockKeeper;Integrated Security=False;User ID=sa;Password=123456789;TrustServerCertificate=True";
         }
     }
 }

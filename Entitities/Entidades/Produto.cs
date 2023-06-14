@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entitities.Entidades
 {
@@ -7,9 +8,10 @@ namespace Entitities.Entidades
         [Display(Name = "Nome do produto")]
         public string NomeProduto { get; set; }
 
-        [Required(ErrorMessage = "O campo 'Código' é obrigatório.")]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Display(Name = "Código do produto")]
-        public int? Codigo { get; set; }
+        public int Codigo { get; set; }
 
         [Display(Name = "Categoria do produto")]
         public string Categoria { get; set; }
