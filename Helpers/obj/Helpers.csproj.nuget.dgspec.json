@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Helpers\\Helpers.csproj": {}
+    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Helpers\\Helpers.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Helpers\\Helpers.csproj": {
+    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Helpers\\Helpers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Helpers\\Helpers.csproj",
+        "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Helpers\\Helpers.csproj",
         "projectName": "Helpers",
-        "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Helpers\\Helpers.csproj",
+        "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Helpers\\Helpers.csproj",
         "packagesPath": "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Helpers\\obj\\",
+        "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Helpers\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

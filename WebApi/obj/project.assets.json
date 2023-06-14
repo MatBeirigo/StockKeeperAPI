@@ -108,6 +108,25 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.15.1"
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/7.0.5": {
         "type": "package",
         "compile": {
@@ -1597,6 +1616,21 @@
         "lib/net45/Microsoft.AspNet.Identity.EntityFramework.xml",
         "microsoft.aspnet.identity.entityframework.2.2.3.nupkg.sha512",
         "microsoft.aspnet.identity.entityframework.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.7": {
+      "sha512": "V3ftCQYDWxHogvrZ3XEr3TNCACqoxMuBwnCI5kq+GeuFGh6u0VYDMrRwvXvFKxdFHgFwS9CFxq4/p1csSVPI8g==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/7.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "microsoft.aspnetcore.authentication.jwtbearer.7.0.7.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/7.0.5": {
@@ -4488,6 +4522,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "Infra >= 1.0.0",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.7",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.5",
       "Microsoft.AspNetCore.Identity.UI >= 7.0.5",
       "Microsoft.AspNetCore.OpenApi >= 7.0.5",
@@ -4504,11 +4539,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\WebApi\\WebApi.csproj",
+      "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\WebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\WebApi\\obj\\",
+      "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4531,8 +4566,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Infra\\Infra.csproj": {
-              "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Infra\\Infra.csproj"
+            "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Infra\\Infra.csproj": {
+              "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Infra\\Infra.csproj"
             }
           }
         }
@@ -4547,6 +4582,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[7.0.7, )"
+          },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[7.0.5, )"

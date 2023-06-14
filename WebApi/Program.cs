@@ -1,10 +1,16 @@
 using Domain.Interfaces.Generica;
 using Domain.Interfaces.IFuncionario;
+using Domain.Interfaces.InterfaceServicos;
+using Domain.Interfaces.IProduto;
+using Domain.Servicos;
 using Entitities.Entidades;
 using Infra.Configuracao;
 using Infra.Repositorio;
 using Infra.Repositorio.Generics;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using WebApi.Token;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,7 +27,42 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 
 //Interface e repositorio 
 builder.Services.AddSingleton(typeof(InterfaceGenerica<>), typeof(RepositoryGenerics<>));
-builder.Services.AddSingleton(typeof(InterfaceFuncionario), typeof(RepositorioFuncionario));
+builder.Services.AddSingleton<InterfaceFuncionario, RepositorioFuncionario>();
+builder.Services.AddSingleton<InterfaceProduto, RepositorioProduto>();
+
+//Interface e serviço
+builder.Services.AddSingleton<IFuncionarioServico, FuncionarioServico>();
+builder.Services.AddSingleton<IProdutoServico, ProdutoServico>();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(option =>
+{
+    option.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+
+        ValidIssuer = "Teste.Security.Bearer",
+        ValidAudience = "Teste.Security.Bearer",
+        IssuerSigningKey = JwtSecurityKey.Create("Secret_Key-12345678")
+    };
+
+    option.Events = new JwtBearerEvents
+    {
+        OnAuthenticationFailed = context =>
+        {
+            Console.WriteLine("OnAuthenticationFailed: " + context.Exception.Message);
+            return Task.CompletedTask;
+        },
+        OnTokenValidated = context =>
+        {
+            Console.WriteLine("OnTokenValidated: " + context.SecurityToken);
+            return Task.CompletedTask;
+        }
+    };
+});
 
 var app = builder.Build();
 
@@ -33,6 +74,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

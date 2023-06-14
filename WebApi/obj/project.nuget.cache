@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LkMODJxiKsFCXjXHJnqBXGlArU3IVGAz29JfvZ27xSJTlTYwC9YHOFeNpnseq/MCuLzU/l9lkRCp7jRzlVVZ1Q==",
+  "dgSpecHash": "s0bpZ94A9nzII81DATftIP/+FvGregRRFTiP4hgYZWhCzkYR1IUNKoJh8y7+4YGWwzZtmvuXp30S5PP2yjp58g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\WebApi\\WebApi.csproj",
+  "projectFilePath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
@@ -10,6 +10,7 @@
     "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
     "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\microsoft.aspnet.identity.entityframework\\2.2.3\\microsoft.aspnet.identity.entityframework.2.2.3.nupkg.sha512",
+    "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.7\\microsoft.aspnetcore.authentication.jwtbearer.7.0.7.nupkg.sha512",
     "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.5\\microsoft.aspnetcore.cryptography.internal.7.0.5.nupkg.sha512",
     "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.5\\microsoft.aspnetcore.cryptography.keyderivation.7.0.5.nupkg.sha512",
     "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\7.0.5\\microsoft.aspnetcore.identity.entityframeworkcore.7.0.5.nupkg.sha512",

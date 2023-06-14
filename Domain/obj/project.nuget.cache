@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ji1zPOFkrytd6EnqzpHWz4Q1pfrhW5igNszHC2PZCVIfQvKLlnJOhR1/uIENEiE4uYv3bUi41QE+6XKGFdMFkw==",
+  "dgSpecHash": "16CL8+8cN87nkaRhTF7eoMjOsNCqnVquNas/j4BNm47TnW0l1JjLK/cGZnn4lfzS7xNbEvW0nQHWzqReiElkkg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\entityframework\\6.1.0\\entityframework.6.1.0.nupkg.sha512",
     "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",

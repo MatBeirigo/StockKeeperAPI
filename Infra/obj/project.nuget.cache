@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/K4B79AszqTSOkfEQg7bX6JZWF7RcGxPpNJ2j44bsaJX7COoyHo5IWboO204wu6O4ztH8hjfhgjtfIhvk1VkwQ==",
+  "dgSpecHash": "T+W24OyyGhb/tFLprQaJO1r+RVYcqzl/s8jmoutVgKbNLVvS14Nw3FQ19OWCelbZkqLzoBJPyuxGLfN6H8zJQw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Infra\\Infra.csproj",
+  "projectFilePath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Infra\\Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

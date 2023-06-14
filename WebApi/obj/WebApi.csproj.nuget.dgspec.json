@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\WebApi\\WebApi.csproj": {}
+    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Domain\\Domain.csproj": {
+    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Entitities\\Entitities.csproj": {
-                "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Entitities\\Entitities.csproj"
+              "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj": {
+                "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj"
               }
             }
           }
@@ -78,14 +78,14 @@
         }
       }
     },
-    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Entitities\\Entitities.csproj": {
+    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Entitities\\Entitities.csproj",
+        "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj",
         "projectName": "Entitities",
-        "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Entitities\\Entitities.csproj",
+        "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj",
         "packagesPath": "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Entitities\\obj\\",
+        "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -148,14 +148,14 @@
         }
       }
     },
-    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Infra\\Infra.csproj": {
+    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Infra\\Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Infra\\Infra.csproj",
+        "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Infra\\Infra.csproj",
         "projectName": "Infra",
-        "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Infra\\Infra.csproj",
+        "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Infra\\Infra.csproj",
         "packagesPath": "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Infra\\obj\\",
+        "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Infra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -177,11 +177,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Domain\\Domain.csproj"
+              "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Entitities\\Entitities.csproj": {
-                "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Entitities\\Entitities.csproj"
+              "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj": {
+                "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj"
               }
             }
           }
@@ -229,14 +229,14 @@
         }
       }
     },
-    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\WebApi\\WebApi.csproj": {
+    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\WebApi\\obj\\",
+        "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -259,8 +259,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Infra\\Infra.csproj": {
-                "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Infra\\Infra.csproj"
+              "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Infra\\Infra.csproj": {
+                "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Infra\\Infra.csproj"
               }
             }
           }
@@ -275,6 +275,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.5, )"

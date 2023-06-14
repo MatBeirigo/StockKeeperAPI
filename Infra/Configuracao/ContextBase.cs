@@ -8,22 +8,26 @@ namespace Infra.Configuracao
     {
         public ContextBase(DbContextOptions options) : base(options) { }
         public DbSet<Funcionario> Funcionario { get; set; }
+        public DbSet<Produto> Produto { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(ObterStringConexao());
-                base.OnConfiguring(optionsBuilder);
             }
+
+            base.OnConfiguring(optionsBuilder);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Funcionario>().ToTable("Funcionario").HasKey(t => t.Id);
+            modelBuilder.Entity<Produto>().ToTable("Produto").HasKey(t => t.Codigo);
+
             base.OnModelCreating(modelBuilder);
         }
-         
+
         public string ObterStringConexao()
         {
             return Database.GetDbConnection().ConnectionString;

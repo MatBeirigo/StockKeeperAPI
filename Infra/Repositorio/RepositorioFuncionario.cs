@@ -15,6 +15,24 @@ namespace Infra.Repositorio
             _OptionsBuilder = new DbContextOptions<ContextBase>();
         }
 
+        public async Task AdicionarFuncionario(Funcionario funcionario)
+        {
+            using (var banco = new ContextBase(_OptionsBuilder))
+            {
+                await banco.Set<Funcionario>().AddAsync(funcionario);
+                await banco.SaveChangesAsync();
+            }
+        }
+
+        public async Task AtualizarFuncionario(Funcionario funcionario)
+        {
+            using (var banco = new ContextBase(_OptionsBuilder))
+            {
+                banco.Set<Funcionario>().Update(funcionario);
+                await banco.SaveChangesAsync();
+            }
+        }
+
         public async Task<IList<Funcionario>> ListarFuncionarios()
         {
             using (var banco = new ContextBase(_OptionsBuilder))

@@ -880,11 +880,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Entitities\\Entitities.csproj",
+      "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj",
       "projectName": "Entitities",
-      "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Entitities\\Entitities.csproj",
+      "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj",
       "packagesPath": "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeper\\Entitities\\obj\\",
+      "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
