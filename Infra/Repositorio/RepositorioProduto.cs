@@ -15,21 +15,29 @@ namespace Infra.Repositorio
             _OptionsBuilder = new DbContextOptions<ContextBase>();
         }
 
-        public async Task EntradaEstoque(Produto produto)
+        public async Task EntradaEstoque(int produtoId, int quantidade)
         {
             using (var banco = new ContextBase(_OptionsBuilder))
             {
-                await banco.Set<Produto>().AddAsync(produto);
-                await banco.SaveChangesAsync();
+                var produto = await banco.Set<Produto>().FindAsync(produtoId);
+                if (produto != null)
+                {
+                    produto.Quantidade += quantidade;
+                    await banco.SaveChangesAsync();
+                }
             }
         }
 
-        public async Task SaidaEstoque(Produto produto)
+        public async Task SaidaEstoque(int produtoId, int quantidade)
         {
             using (var banco = new ContextBase(_OptionsBuilder))
             {
-                banco.Set<Produto>().Update(produto);
-                await banco.SaveChangesAsync();
+                var produto = await banco.Set<Produto>().FindAsync(produtoId);
+                if (produto != null && produto.Quantidade >= quantidade)
+                {
+                    produto.Quantidade -= quantidade;
+                    await banco.SaveChangesAsync();
+                }
             }
         }
 

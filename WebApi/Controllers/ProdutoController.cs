@@ -23,23 +23,13 @@ namespace WebApi.Controllers
 
         public async Task<object> ListarProdutos()
         {
-            return await _InterfaceProduto.ListarProdutos();
+            return await _IProdutoService.ListarProdutos();
         }
 
         [HttpPost("/api/AdicionarProduto")]
         [Produces("application/json")]
         public async Task<object> AdicionarProduto(Produto produto)
         {
-            //try
-            //{
-            //    await _IProdutoService.AdicionarProduto(produto);
-            //    return Ok("Produto cadastrado com sucesso");
-            //}
-            //catch (Exception ex)
-            //{
-            //    return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
-            //}
-
             await _IProdutoService.AdicionarProduto(produto);
             return Task.FromResult(produto);
         }
@@ -104,11 +94,11 @@ namespace WebApi.Controllers
 
         [HttpPost("/api/EntradaEstoque")]
         [Produces("application/json")]
-        public async Task<object> EntradaEstoque(Produto produto)
+        public async Task<object> EntradaEstoque(int produtoId, int quantidade)
         {
             try
             {
-                await _IProdutoService.EntradaEstoque(produto);
+                await _IProdutoService.EntradaEstoque(produtoId, quantidade);
                 return Ok("Entrada de estoque realizada com sucesso");
             }
             catch (Exception ex)
@@ -119,11 +109,11 @@ namespace WebApi.Controllers
 
         [HttpPost("/api/SaidaEstoque")]
         [Produces("application/json")]
-        public async Task<object> SaidaEstoque(Produto produto)
+        public async Task<object> SaidaEstoque(int produtoId, int quantidade)
         {
             try
             {
-                await _IProdutoService.SaidaEstoque(produto);
+                await _IProdutoService.SaidaEstoque(produtoId, quantidade);
                 return Ok("Saída de estoque realizada com sucesso");
             }
             catch (Exception ex)
@@ -131,5 +121,6 @@ namespace WebApi.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
+
     }
 }

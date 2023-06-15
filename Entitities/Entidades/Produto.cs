@@ -27,9 +27,8 @@ namespace Entitities.Entidades
         [Display(Name = "Valor da venda")]
         public decimal ValorVenda { get; set; }
 
-        [Required(ErrorMessage = "O campo 'Quantidade' é obrigatório.")]
         [Display(Name = "Quantidade")]
-        public int Quantidade { get; set; }
+        public int? Quantidade { get; set; }
 
         [Display(Name = "Fornecedor")]
         public string? Fornecedor { get; set; }

@@ -44,14 +44,14 @@ namespace Domain.Servicos
             return await _produtoInterface.ObterProdutoPorNome(nome);
         }
 
-        public async Task EntradaEstoque(Produto produto)
+        public async Task EntradaEstoque(int produtoId, int quantidade)
         {
-            await _produtoInterface.EntradaEstoque(produto);
+            await _produtoInterface.EntradaEstoque(produtoId, quantidade);
         }
 
-        public async Task SaidaEstoque(Produto produto)
+        public async Task SaidaEstoque(int produtoId, int quantidade)
         {
-            await _produtoInterface.SaidaEstoque(produto);
+            await _produtoInterface.SaidaEstoque(produtoId, quantidade);
         }
     }
 }
