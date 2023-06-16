@@ -2,6 +2,7 @@ using Domain.Interfaces.Generica;
 using Domain.Interfaces.IFuncionario;
 using Domain.Interfaces.InterfaceServicos;
 using Domain.Interfaces.IProduto;
+using Domain.Interfaces.IUsuarioEstoque;
 using Domain.Servicos;
 using Entitities.Entidades;
 using Infra.Configuracao;
@@ -29,10 +30,12 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 builder.Services.AddSingleton(typeof(InterfaceGenerica<>), typeof(RepositoryGenerics<>));
 builder.Services.AddSingleton<InterfaceFuncionario, RepositorioFuncionario>();
 builder.Services.AddSingleton<InterfaceProduto, RepositorioProduto>();
+builder.Services.AddSingleton<InterfaceUsuarioEstoque, RepositorioUsuarioEstoque>();
 
 //Interface e serviço
 builder.Services.AddSingleton<IFuncionarioServico, FuncionarioServico>();
 builder.Services.AddSingleton<IProdutoServico, ProdutoServico>();
+builder.Services.AddSingleton<IUsuarioEstoqueServico, UsuarioEstoqueServico>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(option =>
@@ -72,6 +75,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+var devCliente = "http://localhost:4200";
+app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().WithOrigins(devCliente));
 
 app.UseHttpsRedirection();
 

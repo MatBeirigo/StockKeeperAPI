@@ -80,7 +80,7 @@ namespace Infra.Migrations
                     Classificacao = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ValorCompra = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     ValorVenda = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Quantidade = table.Column<int>(type: "int", nullable: false),
+                    Quantidade = table.Column<int>(type: "int", nullable: true),
                     Fornecedor = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Unidade = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Descricao = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -88,6 +88,22 @@ namespace Infra.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Produto", x => x.Codigo);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UsuarioEstoque",
+                columns: table => new
+                {
+                    IdSistema = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EmailUsuario = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Administrador = table.Column<bool>(type: "bit", nullable: false),
+                    SistemaAtual = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UsuarioEstoque", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -259,6 +275,9 @@ namespace Infra.Migrations
 
             migrationBuilder.DropTable(
                 name: "Produto");
+
+            migrationBuilder.DropTable(
+                name: "UsuarioEstoque");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

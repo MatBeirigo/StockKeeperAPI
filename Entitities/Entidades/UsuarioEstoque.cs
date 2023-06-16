@@ -1,20 +1,28 @@
-﻿namespace Entitities.Entidades
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Xml.Linq;
+
+namespace Entitities.Entidades
 {
+    [Table("UsuarioEstoque")]
     public class UsuarioEstoque
     {
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public enum TipoUsuario
-        {
-            Estoque,
-            GestaoDeCompras,
-            NotaFiscal,
-            Faturamento,
-            Financeiro,
-            CRM,
-            RecursosHumanos,
-            Qualidade,
-            Logistica,
-        }
+        [Display(Name = "Código")]
+        public int Id { get; set; }
+
+        [Display(Name = "E-mail do Usuário")]
+        public string EmailUsuario { get; set; }
+
+        [Display(Name = "Administrador")]
+        public bool Administrador { get; set; }
+
+        [Display(Name = "Sistema Atual")]
+        public bool SistemaAtual { get; set; }
+
+        [Display(Name = "Código do Sistema")]
+        //[ForeignKey("SistemaEstoque")]
+        [Column(Order = 1)]
+        public int IdSistema { get; set; }
+        //public virtual SistemaEstoque SistemaEstoque { get; set; }
     }
 }

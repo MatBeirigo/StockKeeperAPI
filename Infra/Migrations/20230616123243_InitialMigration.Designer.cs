@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Migrations
 {
     [DbContext(typeof(ContextBase))]
-    [Migration("20230614230504_InitialMigration")]
+    [Migration("20230616123243_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -157,7 +157,7 @@ namespace Infra.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Quantidade")
+                    b.Property<int?>("Quantidade")
                         .HasColumnType("int");
 
                     b.Property<string>("Unidade")
@@ -172,6 +172,33 @@ namespace Infra.Migrations
                     b.HasKey("Codigo");
 
                     b.ToTable("Produto", (string)null);
+                });
+
+            modelBuilder.Entity("Entitities.Entidades.UsuarioEstoque", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Administrador")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("EmailUsuario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IdSistema")
+                        .HasColumnType("int")
+                        .HasColumnOrder(1);
+
+                    b.Property<bool>("SistemaAtual")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UsuarioEstoque");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

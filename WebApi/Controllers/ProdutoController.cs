@@ -20,7 +20,6 @@ namespace WebApi.Controllers
 
         [HttpPost("/api/ListarProdutos")]
         [Produces("application/json")]
-
         public async Task<object> ListarProdutos()
         {
             return await _IProdutoService.ListarProdutos();

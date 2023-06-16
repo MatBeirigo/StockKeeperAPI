@@ -9,6 +9,7 @@ namespace Infra.Configuracao
         public ContextBase(DbContextOptions<ContextBase> options) : base(options) { }
         public DbSet<Funcionario> Funcionario { get; set; }
         public DbSet<Produto> Produto { get; set; }
+        public DbSet<UsuarioEstoque> UsuarioEstoque { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
