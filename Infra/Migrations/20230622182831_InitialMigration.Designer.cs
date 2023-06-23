@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Migrations
 {
     [DbContext(typeof(ContextBase))]
-    [Migration("20230616123243_InitialMigration")]
+    [Migration("20230622182831_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -33,10 +33,10 @@ namespace Infra.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<string>("CPF")
+                    b.Property<string>("CODEMP")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
-                        .HasColumnName("USR_CPF");
+                        .HasColumnName("CODEMP");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()

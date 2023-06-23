@@ -26,7 +26,7 @@ namespace WebApi.Controllers
         [HttpPost("/api/AdicionarUsuario")]
         public async Task<IActionResult> AdicionarUsuario([FromBody] Login login)
         {
-            if (string.IsNullOrWhiteSpace(login.Email) || string.IsNullOrWhiteSpace(login.Password) || string.IsNullOrWhiteSpace(login.cpf))
+            if (string.IsNullOrWhiteSpace(login.Email) || string.IsNullOrWhiteSpace(login.Password) || string.IsNullOrWhiteSpace(login.CODEMP))
             {
                 return Ok("Falta alguns dados");
             }
@@ -35,7 +35,7 @@ namespace WebApi.Controllers
             { 
                 UserName = login.Email, 
                 Email = login.Email, 
-                CPF = login.cpf 
+                CODEMP = login.CODEMP 
             };
 
             var result = await _userManager.CreateAsync(user, login.Password);

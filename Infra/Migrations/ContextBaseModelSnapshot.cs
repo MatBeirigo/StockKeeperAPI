@@ -30,10 +30,10 @@ namespace Infra.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<string>("CPF")
+                    b.Property<string>("CODEMP")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
-                        .HasColumnName("USR_CPF");
+                        .HasColumnName("CODEMP");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
