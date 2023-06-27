@@ -92,6 +92,16 @@ namespace Infra.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("Entitities.Entidades.Categorias", b =>
+                {
+                    b.Property<string>("Categoria")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Categoria");
+
+                    b.ToTable("Categoria");
+                });
+
             modelBuilder.Entity("Entitities.Entidades.Funcionario", b =>
                 {
                     b.Property<int>("Id")
@@ -130,32 +140,48 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("Entitities.Entidades.Produto", b =>
                 {
-                    b.Property<int>("Codigo")
+                    b.Property<int?>("Codigo")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Codigo"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Codigo"));
 
                     b.Property<string>("Categoria")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Classificacao")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CodigoBarras")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Cor")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal?>("DimensaoEmbalagem")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("Fornecedor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InformacoesFiscais")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NomeProduto")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal?>("Peso")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int?>("Quantidade")
                         .HasColumnType("int");
+
+                    b.Property<string>("Sabor")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Unidade")
                         .HasColumnType("nvarchar(max)");
@@ -163,12 +189,22 @@ namespace Infra.Migrations
                     b.Property<decimal?>("ValorCompra")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("ValorVenda")
+                    b.Property<decimal?>("ValorVenda")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Codigo");
 
                     b.ToTable("Produto", (string)null);
+                });
+
+            modelBuilder.Entity("Entitities.Entidades.Unidades", b =>
+                {
+                    b.Property<string>("Unidade")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Unidade");
+
+                    b.ToTable("Unidade");
                 });
 
             modelBuilder.Entity("Entitities.Entidades.UsuarioEstoque", b =>

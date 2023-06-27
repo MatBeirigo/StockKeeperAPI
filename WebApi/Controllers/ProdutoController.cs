@@ -27,11 +27,20 @@ namespace WebApi.Controllers
 
         [HttpPost("/api/AdicionarProduto")]
         [Produces("application/json")]
-        public async Task<object> AdicionarProduto(Produto produto)
+        public async Task<IActionResult> AdicionarProduto([FromBody] Produto produto)
         {
-            await _IProdutoService.AdicionarProduto(produto);
-            return Task.FromResult(produto);
+            try
+            {
+                await _IProdutoService.AdicionarProduto(produto);
+                return Ok(produto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Ocorreu um erro ao adicionar o produto: {ex.Message}");
+
+            }
         }
+
 
         [HttpPost("/api/AtualizarProduto")]
         [Produces("application/json")]

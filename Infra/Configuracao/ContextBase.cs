@@ -7,8 +7,10 @@ namespace Infra.Configuracao
     public class ContextBase : IdentityDbContext<ApplicationUser>
     {
         public ContextBase(DbContextOptions<ContextBase> options) : base(options) { }
+        public DbSet<Categorias> Categoria { get; set; }
         public DbSet<Funcionario> Funcionario { get; set; }
         public DbSet<Produto> Produto { get; set; }
+        public DbSet<Unidades> Unidade { get; set; }
         public DbSet<UsuarioEstoque> UsuarioEstoque { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -35,5 +37,3 @@ namespace Infra.Configuracao
         }
     }
 }
-
-//Para lembrar: Assim que forem criadas as entidades, elas devem ser instanciadas nesse DbSet
