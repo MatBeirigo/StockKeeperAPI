@@ -40,9 +40,6 @@ namespace Infra.Repositorio
                 return await banco.Funcionario.Include(f => f.Id)
                     .AsNoTracking()
                     .ToListAsync();
-                    //(from s in banco.SistemaEstoque
-                    // join f in banco.Funcionario on s.Id equals f.IdSistema
-                    // select f).AsNoTracking().ToListAsync();
             }
         }
 

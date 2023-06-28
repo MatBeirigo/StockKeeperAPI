@@ -1,5 +1,6 @@
 using Domain.Interfaces.Generica;
 using Domain.Interfaces.ICategoria;
+using Domain.Interfaces.IFornecedor;
 using Domain.Interfaces.IFuncionario;
 using Domain.Interfaces.InterfaceServicos;
 using Domain.Interfaces.IProduto;
@@ -35,6 +36,7 @@ builder.Services.AddSingleton<InterfaceProduto, RepositorioProduto>();
 builder.Services.AddSingleton<InterfaceUsuarioEstoque, RepositorioUsuarioEstoque>();
 builder.Services.AddSingleton<InterfaceCategoria, RepositorioCategoria>();
 builder.Services.AddSingleton<InterfaceUnidades, RepositorioUnidades>();
+builder.Services.AddSingleton<InterfaceFornecedor, RepositorioFornecedor>();
 
 //Interface e serviço
 builder.Services.AddSingleton<IFuncionarioServico, FuncionarioServico>();

@@ -5,7 +5,6 @@ namespace Domain.Interfaces.IUnidades
 {
     public interface InterfaceUnidades : InterfaceGenerica<Unidades>
     {
-        public Task<IList<Unidades>> ListarUnidades();
-
+        public Task<List<Unidades>> ListarUnidades();
     }
 }

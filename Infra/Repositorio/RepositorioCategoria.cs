@@ -15,12 +15,7 @@ namespace Infra.Repositorio
             _OptionsBuilder = new DbContextOptions<ContextBase>();
         }
 
-        public async Task<IList<Categorias>> ListarCategorias()
-        {
-            using (var banco = new ContextBase(_OptionsBuilder))
-            {
-                return await banco.Categoria.AsNoTracking().ToListAsync();
-            }
-        }
+        public async Task<List<Categorias>> ListarCategorias() => await Listar();
+
     }
 }

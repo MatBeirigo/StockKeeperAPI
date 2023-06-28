@@ -8,6 +8,7 @@ namespace Infra.Configuracao
     {
         public ContextBase(DbContextOptions<ContextBase> options) : base(options) { }
         public DbSet<Categorias> Categoria { get; set; }
+        public DbSet<Fornecedores> Fornecedor { get; set; }
         public DbSet<Funcionario> Funcionario { get; set; }
         public DbSet<Produto> Produto { get; set; }
         public DbSet<Unidades> Unidade { get; set; }

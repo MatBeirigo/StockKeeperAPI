@@ -5,6 +5,6 @@ namespace Domain.Interfaces.ICategoria
 {
     public interface InterfaceCategoria : InterfaceGenerica<Categorias>
     {
-        public Task<IList<Categorias>> ListarCategorias();
+        public Task<List<Categorias>> ListarCategorias();
     }
 }

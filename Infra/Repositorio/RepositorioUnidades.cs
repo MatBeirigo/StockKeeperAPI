@@ -15,12 +15,7 @@ namespace Infra.Repositorio
             _OptionsBuilder = new DbContextOptions<ContextBase>();
         }
 
-        public async Task<IList<Unidades>> ListarUnidades()
-        {
-            using (var banco = new ContextBase(_OptionsBuilder))
-            {
-                return await banco.Unidade.AsNoTracking().ToListAsync();
-            }
-        }
+        public async Task<List<Unidades>> ListarUnidades() => await Listar();
+
     }
 }
