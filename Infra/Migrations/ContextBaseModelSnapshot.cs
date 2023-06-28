@@ -94,10 +94,10 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("Entitities.Entidades.Categorias", b =>
                 {
-                    b.Property<string>("Categoria")
+                    b.Property<string>("Nome")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("Categoria");
+                    b.HasKey("Nome");
 
                     b.ToTable("Categoria");
                 });
@@ -199,10 +199,10 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("Entitities.Entidades.Unidades", b =>
                 {
-                    b.Property<string>("Unidade")
+                    b.Property<string>("Nome")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("Unidade");
+                    b.HasKey("Nome");
 
                     b.ToTable("Unidade");
                 });

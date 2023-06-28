@@ -1,7 +1,4 @@
 ﻿using Domain.Interfaces.ICategoria;
-using Domain.Interfaces.InterfaceServicos;
-using Domain.Interfaces.IProduto;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
@@ -18,9 +15,10 @@ namespace WebApi.Controllers
 
         [HttpGet("/api/ListarCategorias")]
         [Produces("application/json")]
-        public async Task<object> ListarCategorias()
+        public async Task<List<string>> ListarCategorias()
         {
-            return await _InterfaceCategoria.ListarCategorias();
+            var categorias = await _InterfaceCategoria.ListarCategorias();
+            return categorias.Select(categoria => categoria.Nome).ToList();
         }
     }
 }

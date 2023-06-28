@@ -6,7 +6,7 @@ namespace Entitities.Entidades
     public class Unidades
     {
         [Key]
-        [Display(Name = "Unidade")]
-        public string Unidade { get; set; }
+        [Display(Name = "Nome")]
+        public string Nome { get; set; }
     }
 }
