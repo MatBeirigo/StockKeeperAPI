@@ -403,11 +403,11 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("Produto", b =>
                 {
-                    b.Property<int?>("Codigo")
+                    b.Property<int>("Codigo")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Codigo"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Codigo"));
 
                     b.Property<string>("Categoria")
                         .HasColumnType("nvarchar(max)");

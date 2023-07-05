@@ -18,25 +18,31 @@ namespace Domain.Servicos
 
         public async Task AdicionarProduto(Produto produto)
         {
-            Estoque estoque = new Estoque
+            try
             {
-                Codigo = (int)produto.Codigo,
-                Produto = produto.NomeProduto,
-                DataAlteracao = DateTime.Now,
-                TipoAlteracao = EnumTipoAlteracao.Cadastro,
-                QuantidadeEntrada = 0,
-                QuantidadeSaida = 0,
-                QuantidadeSaldo = 0,
-                CustoEntrada = 0,
-                CustoSaida = 0,
-                CustoSaldo = 0
-            };
+                Estoque estoque = new Estoque
+                {
+                    Codigo = produto.Codigo,
+                    Produto = produto.NomeProduto,
+                    DataAlteracao = DateTime.Now,
+                    TipoAlteracao = EnumTipoAlteracao.Cadastro,
+                    QuantidadeEntrada = 0,
+                    QuantidadeSaida = 0,
+                    QuantidadeSaldo = 0,
+                    CustoEntrada = 0,
+                    CustoSaida = 0,
+                    CustoSaldo = 0
+                };
 
-            produto.Codigo = null;
-
-            await _estoqueInterface.Adicionar(estoque);
-            await _produtoInterface.Adicionar(produto);
+                await _estoqueInterface.Adicionar(estoque);
+                await _produtoInterface.Adicionar(produto);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ocorreu um erro ao adicionar o produto: {ex.Message}");
+            }
         }
+
 
         public async Task AtualizarProduto(Produto produto)
         {

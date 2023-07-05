@@ -1,14 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
 using System.Text.Json.Serialization;
 
 public class Produto
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [JsonIgnore]
     [Display(Name = "Código do produto")]
-    public int? Codigo { get; set; }
+    public int Codigo { get; set; }
     
     [Display(Name = "Nome do produto")]
     public string NomeProduto { get; set; }
