@@ -1,5 +1,6 @@
 using Domain.Interfaces.Generica;
 using Domain.Interfaces.ICategoria;
+using Domain.Interfaces.IEstoque;
 using Domain.Interfaces.IFornecedor;
 using Domain.Interfaces.IFuncionario;
 using Domain.Interfaces.InterfaceServicos;
@@ -37,11 +38,13 @@ builder.Services.AddSingleton<InterfaceUsuarioEstoque, RepositorioUsuarioEstoque
 builder.Services.AddSingleton<InterfaceCategoria, RepositorioCategoria>();
 builder.Services.AddSingleton<InterfaceUnidades, RepositorioUnidades>();
 builder.Services.AddSingleton<InterfaceFornecedor, RepositorioFornecedor>();
+builder.Services.AddSingleton<InterfaceEstoque, RepositorioEstoque>();
 
 //Interface e serviço
 builder.Services.AddSingleton<IFuncionarioServico, FuncionarioServico>();
 builder.Services.AddSingleton<IProdutoServico, ProdutoServico>();
 builder.Services.AddSingleton<IUsuarioEstoqueServico, UsuarioEstoqueServico>();
+builder.Services.AddSingleton<IEstoqueServico, EstoqueServico>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(option =>

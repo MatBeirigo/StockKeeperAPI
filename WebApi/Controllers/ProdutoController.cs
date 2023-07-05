@@ -18,7 +18,7 @@ namespace WebApi.Controllers
             _IProdutoService = IProdutoServico;
         }
 
-        [HttpPost("/api/ListarProdutos")]
+        [HttpGet("/api/ListarProdutos")]
         [Produces("application/json")]
         public async Task<object> ListarProdutos()
         {
@@ -99,36 +99,5 @@ namespace WebApi.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-
-        [HttpPost("/api/EntradaEstoque")]
-        [Produces("application/json")]
-        public async Task<object> EntradaEstoque(int produtoId, int quantidade)
-        {
-            try
-            {
-                await _IProdutoService.EntradaEstoque(produtoId, quantidade);
-                return Ok("Entrada de estoque realizada com sucesso");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
-            }
-        }
-
-        [HttpPost("/api/SaidaEstoque")]
-        [Produces("application/json")]
-        public async Task<object> SaidaEstoque(int produtoId, int quantidade)
-        {
-            try
-            {
-                await _IProdutoService.SaidaEstoque(produtoId, quantidade);
-                return Ok("Saída de estoque realizada com sucesso");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
-            }
-        }
-
     }
 }

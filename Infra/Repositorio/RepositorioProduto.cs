@@ -15,50 +15,15 @@ namespace Infra.Repositorio
             _OptionsBuilder = new DbContextOptions<ContextBase>();
         }
 
-        public async Task EntradaEstoque(int produtoId, int quantidade)
-        {
-            using (var banco = new ContextBase(_OptionsBuilder))
-            {
-                var produto = await banco.Set<Produto>().FindAsync(produtoId);
-                if (produto != null)
-                {
-                    produto.Quantidade += quantidade;
-                    await banco.SaveChangesAsync();
-                }
-            }
-        }
+        public async Task AdicionarProduto(Produto produto) => await Adicionar(produto);
 
-        public async Task SaidaEstoque(int produtoId, int quantidade)
-        {
-            using (var banco = new ContextBase(_OptionsBuilder))
-            {
-                var produto = await banco.Set<Produto>().FindAsync(produtoId);
-                if (produto != null && produto.Quantidade >= quantidade)
-                {
-                    produto.Quantidade -= quantidade;
-                    await banco.SaveChangesAsync();
-                }
-            }
-        }
+        public async Task AtualizarProduto(Produto produto) => await Atualizar(produto);
 
-        public async Task<IList<Produto>> ListarProdutos()
-        {
-            using (var banco = new ContextBase(_OptionsBuilder))
-            {
-                return await banco.Produto.AsNoTracking().ToListAsync();
-            }
-        }
+        public async Task ExcluirProduto(Produto produto) => await Excluir(produto);
 
-        public async Task<IList<Produto>> ObterProdutoPorId(int Id)
-        {
-            using (var banco = new ContextBase(_OptionsBuilder))
-            {
-                return await banco.Produto.Include(f => f.Codigo)
-                    .Where(f => f.Codigo == Id)
-                    .AsNoTracking()
-                    .ToListAsync();
-            }
-        }
+        public async Task<IList<Produto>> ListarProdutos() => await Listar();
+
+        public async Task<Produto> ObterProdutoPorId(int Id) => await ObterPorId(Id);
 
         public async Task<IList<Produto>> ObterProdutoPorNome(string nome)
         {

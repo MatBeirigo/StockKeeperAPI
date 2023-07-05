@@ -5,9 +5,11 @@ namespace Domain.Interfaces.IProduto
 {
     public interface InterfaceProduto : InterfaceGenerica<Produto>
     {
-        Task EntradaEstoque(int produtoId, int quantidade);
-        Task SaidaEstoque(int produtoId, int quantidade);
-        Task<IList<Produto>> ObterProdutoPorId(int Id);
-        Task<IList<Produto>> ObterProdutoPorNome(string nome);
+        public Task<IList<Produto>> ListarProdutos();
+        public Task<Produto> ObterProdutoPorId(int Id);
+        public Task<IList<Produto>> ObterProdutoPorNome(string nome);
+        public Task AdicionarProduto(Produto produto);
+        public Task AtualizarProduto(Produto produto);
+        public Task ExcluirProduto(Produto produto);
     }
 }

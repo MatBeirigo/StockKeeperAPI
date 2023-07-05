@@ -186,65 +186,6 @@ namespace Infra.Migrations
                     b.ToTable("Funcionario", (string)null);
                 });
 
-            modelBuilder.Entity("Entitities.Entidades.Produto", b =>
-                {
-                    b.Property<int?>("Codigo")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Codigo"));
-
-                    b.Property<string>("Categoria")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Classificacao")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("CodigoBarras")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Cor")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal?>("DimensaoEmbalagem")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("Fornecedor")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("InformacoesFiscais")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NomeProduto")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal?>("Peso")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int?>("Quantidade")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Sabor")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Unidade")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal?>("ValorCompra")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal?>("ValorVenda")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Codigo");
-
-                    b.ToTable("Produto", (string)null);
-                });
-
             modelBuilder.Entity("Entitities.Entidades.Unidades", b =>
                 {
                     b.Property<string>("Nome")
@@ -280,6 +221,47 @@ namespace Infra.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UsuarioEstoque");
+                });
+
+            modelBuilder.Entity("Estoque", b =>
+                {
+                    b.Property<int>("Codigo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Codigo"));
+
+                    b.Property<decimal?>("CustoEntrada")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("CustoSaida")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("CustoSaldo")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("DataAlteracao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Produto")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("QuantidadeEntrada")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("QuantidadeSaida")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("QuantidadeSaldo")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TipoAlteracao")
+                        .HasColumnType("int");
+
+                    b.HasKey("Codigo");
+
+                    b.ToTable("Estoque", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -417,6 +399,56 @@ namespace Infra.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("Produto", b =>
+                {
+                    b.Property<int?>("Codigo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Codigo"));
+
+                    b.Property<string>("Categoria")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Classificacao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CodigoBarras")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Cor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("DimensaoEmbalagem")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Fornecedor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InformacoesFiscais")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NomeProduto")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("Peso")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Sabor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Unidade")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Codigo");
+
+                    b.ToTable("Produto", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

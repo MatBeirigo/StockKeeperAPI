@@ -8,6 +8,7 @@ namespace Infra.Configuracao
     {
         public ContextBase(DbContextOptions<ContextBase> options) : base(options) { }
         public DbSet<Categorias> Categoria { get; set; }
+        public DbSet<Estoque> Estoque { get; set; }
         public DbSet<Fornecedores> Fornecedor { get; set; }
         public DbSet<Funcionario> Funcionario { get; set; }
         public DbSet<Produto> Produto { get; set; }
@@ -28,6 +29,7 @@ namespace Infra.Configuracao
         {
             modelBuilder.Entity<Funcionario>().ToTable("Funcionario").HasKey(t => t.Id);
             modelBuilder.Entity<Produto>().ToTable("Produto").HasKey(t => t.Codigo);
+            modelBuilder.Entity<Estoque>().ToTable("Estoque").HasKey(t => t.Codigo);
 
             base.OnModelCreating(modelBuilder);
         }
