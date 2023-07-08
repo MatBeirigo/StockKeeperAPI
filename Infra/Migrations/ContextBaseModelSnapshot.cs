@@ -30,10 +30,10 @@ namespace Infra.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<string>("CODEMP")
+                    b.Property<string>("CodigoEmpresa")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
-                        .HasColumnName("CODEMP");
+                        .HasColumnName("Codigo da empresa");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -102,6 +102,77 @@ namespace Infra.Migrations
                     b.ToTable("Categoria");
                 });
 
+            modelBuilder.Entity("Entitities.Entidades.Empresas", b =>
+                {
+                    b.Property<int>("CodigoEmpresa")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CodigoEmpresa"));
+
+                    b.Property<string>("Bairro")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CEP")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CNPJ")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CPFResponsavel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cidade")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EmailResponsavel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Endereco")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Estado")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NomeResponsavel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Numero")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumeroMaxUsuarios")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Telefone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TelefoneResponsavel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CodigoEmpresa");
+
+                    b.ToTable("Empresa");
+                });
+
             modelBuilder.Entity("Entitities.Entidades.Fornecedores", b =>
                 {
                     b.Property<int>("Id")
@@ -145,9 +216,12 @@ namespace Infra.Migrations
                     b.Property<string>("Telefone")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TipoFornecedor")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Fornecedor");
+                    b.ToTable("Fornecedores", (string)null);
                 });
 
             modelBuilder.Entity("Entitities.Entidades.Funcionario", b =>
@@ -196,31 +270,19 @@ namespace Infra.Migrations
                     b.ToTable("Unidade");
                 });
 
-            modelBuilder.Entity("Entitities.Entidades.UsuarioEstoque", b =>
+            modelBuilder.Entity("Entitities.Entidades.UsuarioEmpresa", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<string>("UsuarioId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("EmpresaId")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.HasKey("UsuarioId", "EmpresaId");
 
-                    b.Property<bool>("Administrador")
-                        .HasColumnType("bit");
+                    b.HasIndex("EmpresaId");
 
-                    b.Property<string>("EmailUsuario")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdSistema")
-                        .HasColumnType("int")
-                        .HasColumnOrder(1);
-
-                    b.Property<bool>("SistemaAtual")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("UsuarioEstoque");
+                    b.ToTable("UsuarioEmpresa");
                 });
 
             modelBuilder.Entity("Estoque", b =>
@@ -451,6 +513,25 @@ namespace Infra.Migrations
                     b.ToTable("Produto", (string)null);
                 });
 
+            modelBuilder.Entity("Entitities.Entidades.UsuarioEmpresa", b =>
+                {
+                    b.HasOne("Entitities.Entidades.Empresas", "Empresa")
+                        .WithMany("UsuarioEmpresa")
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entitities.Entidades.ApplicationUser", "Usuario")
+                        .WithMany("UsuarioEmpresa")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Empresa");
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -500,6 +581,16 @@ namespace Infra.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Entitities.Entidades.ApplicationUser", b =>
+                {
+                    b.Navigation("UsuarioEmpresa");
+                });
+
+            modelBuilder.Entity("Entitities.Entidades.Empresas", b =>
+                {
+                    b.Navigation("UsuarioEmpresa");
                 });
 #pragma warning restore 612, 618
         }

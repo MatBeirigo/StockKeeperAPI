@@ -1,4 +1,5 @@
 ﻿using Domain.Interfaces.ICategoria;
+using Entitities.Entidades;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
@@ -19,6 +20,13 @@ namespace WebApi.Controllers
         {
             var categorias = await _InterfaceCategoria.ListarCategorias();
             return categorias.Select(categoria => categoria.Nome).ToList();
+        }
+
+        [HttpPost("/api/AdicionarCategoria")]
+        [Produces("application/json")]
+        public async Task AdicionarCategoria([FromBody] Categorias categorias)
+        {
+            await _InterfaceCategoria.AdicionarCategoria(categorias);
         }
     }
 }

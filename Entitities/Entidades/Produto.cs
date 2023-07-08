@@ -6,7 +6,6 @@ public class Produto
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    [JsonIgnore]
     [Display(Name = "Código do produto")]
     public int Codigo { get; set; }
     

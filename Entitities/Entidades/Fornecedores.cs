@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Entitities.Enums;
 
 namespace Entitities.Entidades
 {
@@ -43,5 +44,8 @@ namespace Entitities.Entidades
 
         [Display(Name = "Site")]
         public string? Site { get; set; }
+
+        [Display(Name = "Tipo de Fornecedor")]
+        public string? TipoFornecedor { get; set; }
     }
 }

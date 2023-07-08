@@ -5,7 +5,9 @@ namespace Entitities.Entidades
 {
     public class ApplicationUser : IdentityUser
     {
-        [Column("CODEMP")]
-        public string CODEMP { get; set; }
+        [Column("Codigo da empresa")]
+        public string CodigoEmpresa { get; set; }
+
+        public ICollection<UsuarioEmpresa> UsuarioEmpresa { get; set; }
     }
 }

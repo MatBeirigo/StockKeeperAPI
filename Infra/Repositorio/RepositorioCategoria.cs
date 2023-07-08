@@ -16,6 +16,9 @@ namespace Infra.Repositorio
         }
 
         public async Task<List<Categorias>> ListarCategorias() => await Listar();
+        public async Task AdicionarCategoria(Categorias categorias) => await Adicionar(categorias);
+        public async Task EditarCategoria(Categorias categorias) => await Atualizar(categorias);
+        public async Task ExcluirCategoria(Categorias categorias) => await Excluir(categorias);
 
     }
 }

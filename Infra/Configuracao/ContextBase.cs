@@ -7,13 +7,15 @@ namespace Infra.Configuracao
     public class ContextBase : IdentityDbContext<ApplicationUser>
     {
         public ContextBase(DbContextOptions<ContextBase> options) : base(options) { }
+
         public DbSet<Categorias> Categoria { get; set; }
+        public DbSet<Empresas> Empresa { get; set; }
         public DbSet<Estoque> Estoque { get; set; }
-        public DbSet<Fornecedores> Fornecedor { get; set; }
+        public DbSet<Fornecedores> Fornecedores { get; set; }
         public DbSet<Funcionario> Funcionario { get; set; }
         public DbSet<Produto> Produto { get; set; }
+        public DbSet<UsuarioEmpresa> UsuarioEmpresa { get; set; }
         public DbSet<Unidades> Unidade { get; set; }
-        public DbSet<UsuarioEstoque> UsuarioEstoque { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -29,7 +31,11 @@ namespace Infra.Configuracao
         {
             modelBuilder.Entity<Funcionario>().ToTable("Funcionario").HasKey(t => t.Id);
             modelBuilder.Entity<Produto>().ToTable("Produto").HasKey(t => t.Codigo);
+            modelBuilder.Entity<Fornecedores>().ToTable("Fornecedores").HasKey(t => t.Id);
             modelBuilder.Entity<Estoque>().ToTable("Estoque").HasKey(t => t.Codigo);
+            modelBuilder.Entity<UsuarioEmpresa>().HasKey(ue => new { ue.UsuarioId, ue.EmpresaId });
+            modelBuilder.Entity<UsuarioEmpresa>().HasOne(ue => ue.Usuario).WithMany(u => u.UsuarioEmpresa).HasForeignKey(ue => ue.UsuarioId);
+            modelBuilder.Entity<UsuarioEmpresa>().HasOne(ue => ue.Empresa).WithMany(e => e.UsuarioEmpresa).HasForeignKey(ue => ue.EmpresaId);
 
             base.OnModelCreating(modelBuilder);
         }

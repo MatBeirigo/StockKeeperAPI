@@ -1,4 +1,5 @@
 ﻿using Domain.Interfaces.IUnidades;
+using Entitities.Entidades;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
@@ -19,6 +20,13 @@ namespace WebApi.Controllers
         {
             var categorias = await _InterfaceUnidades.ListarUnidades();
             return categorias.Select(unidades => unidades.Nome).ToList();
+        }
+
+        [HttpPost("/api/AdicionarUnidade")]
+        [Produces("application/json")]
+        public async Task AdicionarUnidade([FromBody] Unidades unidades)
+        {
+            await _InterfaceUnidades.AdicionarUnidade(unidades);
         }
     }
 }

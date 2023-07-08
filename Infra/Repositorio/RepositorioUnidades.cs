@@ -16,6 +16,8 @@ namespace Infra.Repositorio
         }
 
         public async Task<List<Unidades>> ListarUnidades() => await Listar();
-
+        public async Task AdicionarUnidade(Unidades unidade) => await Adicionar(unidade);
+        public async Task EditarUnidades(Unidades unidade) => await Atualizar(unidade);
+        public async Task ExcluirUnidades(Unidades unidade) => await Excluir(unidade);
     }
 }
