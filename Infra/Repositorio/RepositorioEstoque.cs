@@ -23,6 +23,7 @@ namespace Infra.Repositorio
 
         public async Task<List<Estoque>> ListarEstoque() => await Listar();
 
+        public async Task<Estoque> ObterEstoquePorId(int Id) => await ObterPorId(Id);
         public async Task EntradaEstoque(int Id, int quantidade)
         {
             using (var banco = new ContextBase(_OptionsBuilder))

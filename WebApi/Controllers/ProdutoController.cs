@@ -72,7 +72,7 @@ namespace WebApi.Controllers
             }
         }
 
-        [HttpPost("/api/ObterProdutoPorId")]
+        [HttpGet("/api/ObterProdutoPorId/{Id}")]
         [Produces("application/json")]
         public async Task<object> ObterProdutoPorId(int Id)
         {

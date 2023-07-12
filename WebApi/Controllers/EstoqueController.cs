@@ -23,6 +23,13 @@ namespace WebApi.Controllers
             return await _InterfaceEstoque.ListarEstoque();
         }
 
+        [HttpGet("/api/ObterEstoquePorId/{Id}")]
+        [Produces("application/json")]
+        public async Task<object> ObterEstoquePorId(int Id)
+        {
+            return await _InterfaceEstoque.ObterEstoquePorId(Id);
+        }
+
         [HttpPost("/api/AdicionarEstoque")]
         [Produces("application/json")]
         public async Task<IActionResult> AdicionarEstoque([FromBody] Estoque estoque)
