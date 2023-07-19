@@ -6,11 +6,14 @@ public class Produto
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    [Display(Name = "Código do produto")]
-    public int Codigo { get; set; }
+    [Display(Name = "Id do produto")]
+    public int Id { get; set; }
     
     [Display(Name = "Nome do produto")]
     public string NomeProduto { get; set; }
+
+    [Display(Name = "IdEmpresa")]
+    public int? IdEmpresa { get; set; }
 
     [Display(Name = "Categoria do produto")]
     public string? Categoria { get; set; }

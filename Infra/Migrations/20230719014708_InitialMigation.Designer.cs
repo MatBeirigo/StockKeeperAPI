@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Migrations
 {
     [DbContext(typeof(ContextBase))]
-    [Migration("20230707232939_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230719014708_InitialMigation")]
+    partial class InitialMigation
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -263,6 +263,56 @@ namespace Infra.Migrations
                     b.ToTable("Funcionario", (string)null);
                 });
 
+            modelBuilder.Entity("Entitities.Entidades.Kardex", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdAlteracao")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DataAlteracao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Produto")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("QuantidadeEntrada")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("QuantidadeSaida")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QuantidadeSaldo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TipoAlteracao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("ValorTotalEntrada")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("ValorTotalSaida")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ValorTotalSaldo")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("ValorUnitarioEntrada")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("ValorUnitarioSaida")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ValorUnitarioSaldo")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id", "IdAlteracao");
+
+                    b.ToTable("Kardex");
+                });
+
             modelBuilder.Entity("Entitities.Entidades.Unidades", b =>
                 {
                     b.Property<string>("Nome")
@@ -290,41 +340,32 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("Estoque", b =>
                 {
-                    b.Property<int>("Codigo")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Codigo"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal?>("CustoEntrada")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("IdAlteracao")
+                        .HasColumnType("int");
 
-                    b.Property<decimal?>("CustoSaida")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal?>("CustoSaldo")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("DataAlteracao")
-                        .HasColumnType("datetime2");
+                    b.Property<int?>("IdEmpresa")
+                        .HasColumnType("int");
 
                     b.Property<string>("Produto")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("QuantidadeEntrada")
+                    b.Property<int>("QuantidadeEstoque")
                         .HasColumnType("int");
 
-                    b.Property<int?>("QuantidadeSaida")
-                        .HasColumnType("int");
+                    b.Property<decimal>("ValorEstoque")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("QuantidadeSaldo")
-                        .HasColumnType("int");
+                    b.Property<decimal>("ValorUnitarioEstoque")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("TipoAlteracao")
-                        .HasColumnType("int");
-
-                    b.HasKey("Codigo");
+                    b.HasKey("Id");
 
                     b.ToTable("Estoque", (string)null);
                 });
@@ -468,11 +509,11 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("Produto", b =>
                 {
-                    b.Property<int>("Codigo")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Codigo"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Categoria")
                         .HasColumnType("nvarchar(max)");
@@ -495,6 +536,9 @@ namespace Infra.Migrations
                     b.Property<string>("Fornecedor")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("IdEmpresa")
+                        .HasColumnType("int");
+
                     b.Property<string>("InformacoesFiscais")
                         .HasColumnType("nvarchar(max)");
 
@@ -511,7 +555,7 @@ namespace Infra.Migrations
                     b.Property<string>("Unidade")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Codigo");
+                    b.HasKey("Id");
 
                     b.ToTable("Produto", (string)null);
                 });

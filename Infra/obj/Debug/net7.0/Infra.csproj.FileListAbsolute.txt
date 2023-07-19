@@ -32,3 +32,20 @@ C:\Users\Matheus Beirigo\source\repos\StockKeeperApi\Infra\bin\Debug\net7.0\Doma
 C:\Users\Matheus Beirigo\source\repos\StockKeeperApi\Infra\bin\Debug\net7.0\Entitities.pdb
 C:\Users\Matheus Beirigo\source\repos\StockKeeperApi\Infra\obj\Debug\net7.0\Infra.csproj.CopyComplete
 C:\Users\Matheus Beirigo\source\repos\StockKeeperApi\Infra\obj\Debug\net7.0\ref\Infra.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\bin\Debug\net7.0\Infra.deps.json
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\bin\Debug\net7.0\Infra.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\bin\Debug\net7.0\Infra.pdb
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\bin\Debug\net7.0\Domain.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\bin\Debug\net7.0\Entitities.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\bin\Debug\net7.0\Domain.pdb
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\bin\Debug\net7.0\Entitities.pdb
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\obj\Debug\net7.0\Infra.csproj.AssemblyReference.cache
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\obj\Debug\net7.0\Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\obj\Debug\net7.0\Infra.AssemblyInfoInputs.cache
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\obj\Debug\net7.0\Infra.AssemblyInfo.cs
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\obj\Debug\net7.0\Infra.csproj.CoreCompileInputs.cache
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\obj\Debug\net7.0\Infra.csproj.CopyComplete
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\obj\Debug\net7.0\Infra.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\obj\Debug\net7.0\refint\Infra.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\obj\Debug\net7.0\Infra.pdb
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\obj\Debug\net7.0\ref\Infra.dll

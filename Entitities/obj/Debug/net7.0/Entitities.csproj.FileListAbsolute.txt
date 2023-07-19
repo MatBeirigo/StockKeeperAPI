@@ -22,3 +22,15 @@ C:\Users\Matheus Beirigo\source\repos\StockKeeperApi\Entitities\obj\Debug\net7.0
 C:\Users\Matheus Beirigo\source\repos\StockKeeperApi\Entitities\obj\Debug\net7.0\refint\Entitities.dll
 C:\Users\Matheus Beirigo\source\repos\StockKeeperApi\Entitities\obj\Debug\net7.0\Entitities.pdb
 C:\Users\Matheus Beirigo\source\repos\StockKeeperApi\Entitities\obj\Debug\net7.0\ref\Entitities.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Entitities\bin\Debug\net7.0\Entitities.deps.json
+C:\Users\mathe\source\repos\StockKeeperApi\Entitities\bin\Debug\net7.0\Entitities.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Entitities\bin\Debug\net7.0\Entitities.pdb
+C:\Users\mathe\source\repos\StockKeeperApi\Entitities\obj\Debug\net7.0\Entitities.csproj.AssemblyReference.cache
+C:\Users\mathe\source\repos\StockKeeperApi\Entitities\obj\Debug\net7.0\Entitities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mathe\source\repos\StockKeeperApi\Entitities\obj\Debug\net7.0\Entitities.AssemblyInfoInputs.cache
+C:\Users\mathe\source\repos\StockKeeperApi\Entitities\obj\Debug\net7.0\Entitities.AssemblyInfo.cs
+C:\Users\mathe\source\repos\StockKeeperApi\Entitities\obj\Debug\net7.0\Entitities.csproj.CoreCompileInputs.cache
+C:\Users\mathe\source\repos\StockKeeperApi\Entitities\obj\Debug\net7.0\Entitities.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Entitities\obj\Debug\net7.0\refint\Entitities.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Entitities\obj\Debug\net7.0\Entitities.pdb
+C:\Users\mathe\source\repos\StockKeeperApi\Entitities\obj\Debug\net7.0\ref\Entitities.dll

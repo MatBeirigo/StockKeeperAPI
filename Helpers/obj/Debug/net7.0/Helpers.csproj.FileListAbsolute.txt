@@ -22,3 +22,15 @@ C:\Users\Matheus Beirigo\source\repos\StockKeeperApi\Helpers\obj\Debug\net7.0\He
 C:\Users\Matheus Beirigo\source\repos\StockKeeperApi\Helpers\obj\Debug\net7.0\refint\Helpers.dll
 C:\Users\Matheus Beirigo\source\repos\StockKeeperApi\Helpers\obj\Debug\net7.0\Helpers.pdb
 C:\Users\Matheus Beirigo\source\repos\StockKeeperApi\Helpers\obj\Debug\net7.0\ref\Helpers.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Helpers\bin\Debug\net7.0\Helpers.deps.json
+C:\Users\mathe\source\repos\StockKeeperApi\Helpers\bin\Debug\net7.0\Helpers.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Helpers\bin\Debug\net7.0\Helpers.pdb
+C:\Users\mathe\source\repos\StockKeeperApi\Helpers\obj\Debug\net7.0\Helpers.csproj.AssemblyReference.cache
+C:\Users\mathe\source\repos\StockKeeperApi\Helpers\obj\Debug\net7.0\Helpers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mathe\source\repos\StockKeeperApi\Helpers\obj\Debug\net7.0\Helpers.AssemblyInfoInputs.cache
+C:\Users\mathe\source\repos\StockKeeperApi\Helpers\obj\Debug\net7.0\Helpers.AssemblyInfo.cs
+C:\Users\mathe\source\repos\StockKeeperApi\Helpers\obj\Debug\net7.0\Helpers.csproj.CoreCompileInputs.cache
+C:\Users\mathe\source\repos\StockKeeperApi\Helpers\obj\Debug\net7.0\Helpers.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Helpers\obj\Debug\net7.0\refint\Helpers.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Helpers\obj\Debug\net7.0\Helpers.pdb
+C:\Users\mathe\source\repos\StockKeeperApi\Helpers\obj\Debug\net7.0\ref\Helpers.dll

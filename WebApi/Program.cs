@@ -3,6 +3,7 @@ using Domain.Interfaces.ICategoria;
 using Domain.Interfaces.IEstoque;
 using Domain.Interfaces.IFornecedor;
 using Domain.Interfaces.IFuncionario;
+using Domain.Interfaces.IKardex;
 using Domain.Interfaces.InterfaceServicos;
 using Domain.Interfaces.IProduto;
 using Domain.Interfaces.IUnidades;
@@ -37,6 +38,7 @@ builder.Services.AddSingleton<InterfaceCategoria, RepositorioCategoria>();
 builder.Services.AddSingleton<InterfaceUnidades, RepositorioUnidades>();
 builder.Services.AddSingleton<InterfaceFornecedor, RepositorioFornecedor>();
 builder.Services.AddSingleton<InterfaceEstoque, RepositorioEstoque>();
+builder.Services.AddSingleton<InterfaceKardex, RepositorioKardex>();
 
 //Interface e serviço
 builder.Services.AddSingleton<IFuncionarioServico, FuncionarioServico>();

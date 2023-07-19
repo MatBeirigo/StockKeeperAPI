@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Infra\\Infra.csproj": {}
+    "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Infra\\Infra.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Domain\\Domain.csproj": {
+    "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Matheus Beirigo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,15 +22,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj": {
-                "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj"
+              "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj": {
+                "projectPath": "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj"
               }
             }
           }
@@ -74,25 +69,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj": {
+    "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj",
+        "projectUniqueName": "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj",
         "projectName": "Entitities",
-        "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj",
-        "packagesPath": "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\obj\\",
+        "projectPath": "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj",
+        "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Entitities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Matheus Beirigo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -100,7 +91,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -144,25 +134,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Infra\\Infra.csproj": {
+    "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Infra\\Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Infra\\Infra.csproj",
+        "projectUniqueName": "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Infra\\Infra.csproj",
         "projectName": "Infra",
-        "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Infra\\Infra.csproj",
-        "packagesPath": "C:\\Users\\Matheus Beirigo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Infra\\obj\\",
+        "projectPath": "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Infra\\Infra.csproj",
+        "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Infra\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Matheus Beirigo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -170,18 +156,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Domain\\Domain.csproj"
+              "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj": {
-                "projectPath": "C:\\Users\\Matheus Beirigo\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj"
+              "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj": {
+                "projectPath": "C:\\Users\\mathe\\source\\repos\\StockKeeperApi\\Entitities\\Entitities.csproj"
               }
             }
           }
@@ -225,7 +210,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

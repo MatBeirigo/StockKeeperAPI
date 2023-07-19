@@ -1,7 +1,5 @@
 ﻿using Domain.Interfaces.InterfaceServicos;
 using Domain.Interfaces.IProduto;
-using Entitities.Entidades;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers

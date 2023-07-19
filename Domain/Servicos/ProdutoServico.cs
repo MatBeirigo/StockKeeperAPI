@@ -22,16 +22,13 @@ namespace Domain.Servicos
             {
                 Estoque estoque = new Estoque
                 {
-                    Codigo = produto.Codigo,
+                    Id = produto.Id,
+                    IdEmpresa = produto.IdEmpresa,
+                    IdAlteracao = 0,
                     Produto = produto.NomeProduto,
-                    DataAlteracao = DateTime.Now,
-                    TipoAlteracao = EnumTipoAlteracao.Cadastro,
-                    QuantidadeEntrada = 0,
-                    QuantidadeSaida = 0,
-                    QuantidadeSaldo = 0,
-                    CustoEntrada = 0,
-                    CustoSaida = 0,
-                    CustoSaldo = 0
+                    QuantidadeEstoque = 0,
+                    ValorEstoque = 0,
+                    ValorUnitarioEstoque = 0
                 };
 
                 await _estoqueInterface.Adicionar(estoque);

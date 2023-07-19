@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Infra.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class InitialMigation : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -93,21 +93,18 @@ namespace Infra.Migrations
                 name: "Estoque",
                 columns: table => new
                 {
-                    Codigo = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    IdEmpresa = table.Column<int>(type: "int", nullable: true),
+                    IdAlteracao = table.Column<int>(type: "int", nullable: false),
                     Produto = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DataAlteracao = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    TipoAlteracao = table.Column<int>(type: "int", nullable: true),
-                    QuantidadeEntrada = table.Column<int>(type: "int", nullable: true),
-                    QuantidadeSaida = table.Column<int>(type: "int", nullable: true),
-                    QuantidadeSaldo = table.Column<int>(type: "int", nullable: true),
-                    CustoEntrada = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
-                    CustoSaida = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
-                    CustoSaldo = table.Column<decimal>(type: "decimal(18,2)", nullable: true)
+                    QuantidadeEstoque = table.Column<int>(type: "int", nullable: false),
+                    ValorEstoque = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    ValorUnitarioEstoque = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Estoque", x => x.Codigo);
+                    table.PrimaryKey("PK_Estoque", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -153,12 +150,37 @@ namespace Infra.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Kardex",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    IdAlteracao = table.Column<int>(type: "int", nullable: false),
+                    Produto = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DataAlteracao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TipoAlteracao = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    QuantidadeEntrada = table.Column<int>(type: "int", nullable: true),
+                    ValorUnitarioEntrada = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    ValorTotalEntrada = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    QuantidadeSaida = table.Column<int>(type: "int", nullable: true),
+                    ValorUnitarioSaida = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    ValorTotalSaida = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    QuantidadeSaldo = table.Column<int>(type: "int", nullable: false),
+                    ValorUnitarioSaldo = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    ValorTotalSaldo = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Kardex", x => new { x.Id, x.IdAlteracao });
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Produto",
                 columns: table => new
                 {
-                    Codigo = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NomeProduto = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IdEmpresa = table.Column<int>(type: "int", nullable: true),
                     Categoria = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Classificacao = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Cor = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -173,7 +195,7 @@ namespace Infra.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Produto", x => x.Codigo);
+                    table.PrimaryKey("PK_Produto", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -391,6 +413,9 @@ namespace Infra.Migrations
 
             migrationBuilder.DropTable(
                 name: "Funcionario");
+
+            migrationBuilder.DropTable(
+                name: "Kardex");
 
             migrationBuilder.DropTable(
                 name: "Produto");

@@ -1,5 +1,6 @@
 ﻿using Domain.Interfaces.IEstoque;
 using Domain.Interfaces.IFornecedor;
+using Domain.Interfaces.InterfaceServicos;
 using Entitities.Entidades;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,9 +12,12 @@ namespace WebApi.Controllers
     public class EstoqueController : ControllerBase
     {
         private readonly InterfaceEstoque _InterfaceEstoque;
-        public EstoqueController(InterfaceEstoque InterfaceEstoque)
+        private readonly IEstoqueServico _IEstoqueService;
+
+        public EstoqueController(InterfaceEstoque InterfaceEstoque, IEstoqueServico IEstoqueServico)
         {
             _InterfaceEstoque = InterfaceEstoque;
+            _IEstoqueService = IEstoqueServico;
         }
 
         [HttpGet("/api/ListarEstoque")]
@@ -80,11 +84,11 @@ namespace WebApi.Controllers
 
         [HttpPost("/api/EntradaEstoque")]
         [Produces("application/json")]
-        public async Task<IActionResult> EntradaEstoque(int Id, int quantidade)
+        public async Task<IActionResult> EntradaEstoque(Estoque estoque)
         {
             try
             {
-                await _InterfaceEstoque.EntradaEstoque(Id, quantidade);
+                await _IEstoqueService.EntradaEstoque(estoque);
                 return Ok();
             }
             catch (Exception ex)
@@ -96,11 +100,11 @@ namespace WebApi.Controllers
 
         [HttpPost("/api/SaidaEstoque")]
         [Produces("application/json")]
-        public async Task<IActionResult> SaidaEstoque(int Id, int quantidade)
+        public async Task<IActionResult> SaidaEstoque(Estoque estoque)
         {
             try
             {
-                await _InterfaceEstoque.SaidaEstoque(Id, quantidade);
+                await _IEstoqueService.SaidaEstoque(estoque);
                 return Ok();
             }
             catch (Exception ex)

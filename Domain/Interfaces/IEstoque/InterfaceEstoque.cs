@@ -10,7 +10,7 @@ namespace Domain.Interfaces.IEstoque
         public Task AdicionarEstoque(Estoque estoque);
         public Task AtualizarEstoque(Estoque estoque);
         public Task ExcluirEstoque(Estoque estoque);
-        public Task EntradaEstoque(int Id, int quantidade);
-        public Task SaidaEstoque(int Id, int quantidade);
+        public Task EntradaEstoque(Estoque estoque);
+        public Task SaidaEstoque(Estoque estoque);
     }
 }

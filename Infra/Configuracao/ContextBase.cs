@@ -13,6 +13,7 @@ namespace Infra.Configuracao
         public DbSet<Estoque> Estoque { get; set; }
         public DbSet<Fornecedores> Fornecedores { get; set; }
         public DbSet<Funcionario> Funcionario { get; set; }
+        public DbSet<Kardex> Kardex { get; set; }
         public DbSet<Produto> Produto { get; set; }
         public DbSet<UsuarioEmpresa> UsuarioEmpresa { get; set; }
         public DbSet<Unidades> Unidade { get; set; }
@@ -30,19 +31,20 @@ namespace Infra.Configuracao
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Funcionario>().ToTable("Funcionario").HasKey(t => t.Id);
-            modelBuilder.Entity<Produto>().ToTable("Produto").HasKey(t => t.Codigo);
+            modelBuilder.Entity<Produto>().ToTable("Produto").HasKey(t => t.Id);
             modelBuilder.Entity<Fornecedores>().ToTable("Fornecedores").HasKey(t => t.Id);
-            modelBuilder.Entity<Estoque>().ToTable("Estoque").HasKey(t => t.Codigo);
+            modelBuilder.Entity<Estoque>().ToTable("Estoque").HasKey(t => t.Id);
+            modelBuilder.Entity<Kardex>().HasKey(k => new { k.Id, k.IdAlteracao });
             modelBuilder.Entity<UsuarioEmpresa>().HasKey(ue => new { ue.UsuarioId, ue.EmpresaId });
             modelBuilder.Entity<UsuarioEmpresa>().HasOne(ue => ue.Usuario).WithMany(u => u.UsuarioEmpresa).HasForeignKey(ue => ue.UsuarioId);
             modelBuilder.Entity<UsuarioEmpresa>().HasOne(ue => ue.Empresa).WithMany(e => e.UsuarioEmpresa).HasForeignKey(ue => ue.EmpresaId);
 
             base.OnModelCreating(modelBuilder);
         }
-
+        
         public string ObterStringConexao()
         {
-            return "Data Source=DESKTOP-BEIRIGO;Initial Catalog=StockKeeper;Integrated Security=False;User ID=sa;Password=123456789;TrustServerCertificate=True";
+            return "Data Source=DESKTOP-BEIRIGO;Initial Catalog=StockKeeper;Integrated Security=False;User ID=sa;Password=Mat123456789;TrustServerCertificate=True";
         }
     }
 }
