@@ -113,5 +113,36 @@ namespace WebApi.Controllers
 
             }
         }
+
+        [HttpPost("/api/GetQuantidadeEstoque")]
+        [Produces("application/json")]
+        public async Task<IActionResult> GetQuantidadeEstoque([FromBody] int id)
+        {
+            try
+            {
+                var quantidade = await _InterfaceEstoque.GetQuantidadeEstoque(id);
+                return Ok(quantidade);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Ocorreu um erro ao obter a quantidade do estoque: {ex.Message}");
+            }
+        }
+
+        [HttpPost("/api/GetValorUnitarioEstoque")]
+        [Produces("application/json")]
+        public async Task<IActionResult> GetValorUnitarioEstoque([FromBody] int id)
+        {
+            try
+            {
+                var valorUnitario = await _InterfaceEstoque.GetValorUnitarioEstoque(id);
+                return Ok(valorUnitario);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Ocorreu um erro ao obter o valor unitário do estoque: {ex.Message}");
+            }
+        }
+
     }
 }

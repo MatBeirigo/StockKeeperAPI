@@ -12,5 +12,7 @@ namespace Domain.Interfaces.IEstoque
         public Task ExcluirEstoque(Estoque estoque);
         public Task EntradaEstoque(Estoque estoque);
         public Task SaidaEstoque(Estoque estoque);
+        public Task<int> GetQuantidadeEstoque(int id);
+        public Task<double> GetValorUnitarioEstoque (int id);
     }
 }

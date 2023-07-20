@@ -24,18 +24,6 @@ namespace Domain.Servicos
 
                 Kardex kardex = new Kardex
                 {
-                    //Codigo = estoque.Codigo,
-                    //Produto = estoque.Produto,
-                    //IdAlteracao = int.Parse(estoque.IdAlteracao.ToString()) + 1,
-                    //DataAlteracao = DateTime.Now,
-                    //TipoAlteracao = "Entrada",
-                    //QuantidadeEntrada = estoque.QuantidadeEntrada,
-                    //QuantidadeSaida = 0,
-                    //QuantidadeSaldo = estoque.QuantidadeSaldo + estoque.QuantidadeEntrada,
-                    //CustoEntrada = estoque.CustoEntrada,
-                    //CustoSaida = 0,
-                    //CustoSaldo = estoque.CustoSaldo + estoque.CustoEntrada
-
                     Id = entrada.Id,
                     Produto = entrada.Produto,
                     IdAlteracao = int.Parse(entrada.IdAlteracao.ToString()) + 1,
@@ -69,18 +57,6 @@ namespace Domain.Servicos
 
                 Kardex kardex = new Kardex
                 {
-                    //Codigo = estoque.Codigo,
-                    //Produto = estoque.Produto,
-                    //IdAlteracao = int.Parse(estoque.IdAlteracao.ToString()) + 1,
-                    //DataAlteracao = DateTime.Now,
-                    //TipoAlteracao = "Saida",
-                    //QuantidadeEntrada = 0,
-                    //QuantidadeSaida = estoque.QuantidadeSaida,
-                    //QuantidadeSaldo = estoque.QuantidadeSaldo - estoque.QuantidadeSaida,
-                    //CustoEntrada = 0,
-                    //CustoSaida = estoque.CustoSaida,
-                    //CustoSaldo = estoque.CustoSaldo + estoque.CustoSaida
-
                     Id = saida.Id,
                     Produto = saida.Produto,
                     IdAlteracao = int.Parse(saida.IdAlteracao.ToString()) + 1,
