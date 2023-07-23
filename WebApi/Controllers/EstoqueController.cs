@@ -126,6 +126,7 @@ namespace WebApi.Controllers
             catch (Exception ex)
             {
                 return StatusCode(500, $"Ocorreu um erro ao obter a quantidade do estoque: {ex.Message}");
+
             }
         }
 
@@ -141,8 +142,8 @@ namespace WebApi.Controllers
             catch (Exception ex)
             {
                 return StatusCode(500, $"Ocorreu um erro ao obter o valor unitário do estoque: {ex.Message}");
+
             }
         }
-
     }
 }
