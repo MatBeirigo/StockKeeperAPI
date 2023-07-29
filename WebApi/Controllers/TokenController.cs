@@ -14,7 +14,7 @@ namespace WebApi.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public TokenController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager) 
+        public TokenController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -42,7 +42,7 @@ namespace WebApi.Controllers
                     .AddClaim("UsuarioAPINumero", "1")
                     .AddExpiry(5)
                     .Build();
-                
+
                 return Ok(token.Value);
             }
             else

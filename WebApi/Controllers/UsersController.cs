@@ -19,12 +19,13 @@ namespace WebApi.Controllers
         {
             _userManager = userManager;
             _signInManager = signInManager;
+
         }
 
         [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/AdicionarUsuario")]
-        public async Task<IActionResult> AdicionarUsuario([FromBody] Login login)
+        [HttpPost("/api/CadastroUsuarioSistema")]
+        public async Task<IActionResult> CadastroUsuarioSistema([FromBody] Login login)
         {
             if (string.IsNullOrWhiteSpace(login.Email) || string.IsNullOrWhiteSpace(login.Password) || string.IsNullOrWhiteSpace(login.CodigoEmpresa))
             {
@@ -32,10 +33,12 @@ namespace WebApi.Controllers
             }
 
             var user = new ApplicationUser 
-            { 
-                UserName = login.Email, 
+            {
+                Usuario = login.Usuario, 
                 Email = login.Email,
-                CodigoEmpresa = login.CodigoEmpresa
+                CodigoEmpresa = login.CodigoEmpresa,
+
+                UserName = login.Email,
             };
 
             var result = await _userManager.CreateAsync(user, login.Password);
@@ -59,6 +62,36 @@ namespace WebApi.Controllers
             else
             {
                 return Ok(resultConfirm.Errors);
+            }
+        }
+
+        [AllowAnonymous]
+        [Produces("application/json")]
+        [HttpPost("/api/CadastroEmpresaSistema")]
+        public async Task<IActionResult> CadastroEmpresaSistema([FromBody] Login login)
+        {
+            if (string.IsNullOrWhiteSpace(login.CodigoEmpresa))
+            {
+                return Ok("Falta o código da empresa");
+            }
+
+            var user = new ApplicationUser
+            {
+                Usuario = login.Usuario,
+                CodigoEmpresa = login.CodigoEmpresa,
+
+                UserName = login.Email,
+            };
+
+            var result = await _userManager.CreateAsync(user);
+
+            if (result.Succeeded)
+            {
+                return Ok("Usuário criado com sucesso usando o código da empresa");
+            }
+            else
+            {
+                return Ok(result.Errors);
             }
         }
     }

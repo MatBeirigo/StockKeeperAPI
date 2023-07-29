@@ -1,5 +1,6 @@
 using Domain.Interfaces.Generica;
 using Domain.Interfaces.ICategoria;
+using Domain.Interfaces.IEmpresa;
 using Domain.Interfaces.IEstoque;
 using Domain.Interfaces.IFornecedor;
 using Domain.Interfaces.IFuncionario;
@@ -27,7 +28,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ContextBase>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = true;
+})
     .AddEntityFrameworkStores<ContextBase>();
 
 //Interface e repositorio 
@@ -39,6 +43,7 @@ builder.Services.AddSingleton<InterfaceUnidades, RepositorioUnidades>();
 builder.Services.AddSingleton<InterfaceFornecedor, RepositorioFornecedor>();
 builder.Services.AddSingleton<InterfaceEstoque, RepositorioEstoque>();
 builder.Services.AddSingleton<InterfaceKardex, RepositorioKardex>();
+builder.Services.AddSingleton<InterfaceEmpresa, RepositorioEmpresa>();
 
 //Interface e serviço
 builder.Services.AddSingleton<IFuncionarioServico, FuncionarioServico>();

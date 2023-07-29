@@ -35,9 +35,9 @@ namespace Infra.Configuracao
             modelBuilder.Entity<Fornecedores>().ToTable("Fornecedores").HasKey(t => t.Id);
             modelBuilder.Entity<Estoque>().ToTable("Estoque").HasKey(t => t.Id);
             modelBuilder.Entity<Kardex>().HasKey(k => new { k.Id, k.IdAlteracao });
-            modelBuilder.Entity<UsuarioEmpresa>().HasKey(ue => new { ue.UsuarioId, ue.EmpresaId });
-            modelBuilder.Entity<UsuarioEmpresa>().HasOne(ue => ue.Usuario).WithMany(u => u.UsuarioEmpresa).HasForeignKey(ue => ue.UsuarioId);
-            modelBuilder.Entity<UsuarioEmpresa>().HasOne(ue => ue.Empresa).WithMany(e => e.UsuarioEmpresa).HasForeignKey(ue => ue.EmpresaId);
+            modelBuilder.Entity<UsuarioEmpresa>().HasKey(ue => new { ue.UsuarioId, ue.CodigoEmpresa });
+            //modelBuilder.Entity<UsuarioEmpresa>().HasOne(ue => ue.Usuario).WithMany(u => u.UsuarioEmpresa).HasForeignKey(ue => ue.UsuarioId);
+            //modelBuilder.Entity<UsuarioEmpresa>().HasOne(ue => ue.Empresa).WithMany(e => e.UsuarioEmpresa).HasForeignKey(ue => ue.EmpresaId);
 
             base.OnModelCreating(modelBuilder);
         }
