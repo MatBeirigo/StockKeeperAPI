@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entitities.Entidades
 {
@@ -6,6 +7,7 @@ namespace Entitities.Entidades
     {
         [Key]
         [Display(Name = "IdEmpresa")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdEmpresa { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
@@ -56,7 +58,5 @@ namespace Entitities.Entidades
 
         [Display(Name = "Número Máximo de Usuários")]
         public int? NumeroMaxUsuarios { get; set; }
-
-        //public ICollection<UsuarioEmpresa>? UsuarioEmpresa { get; set; }
     }
 }

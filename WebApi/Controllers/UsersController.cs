@@ -19,7 +19,6 @@ namespace WebApi.Controllers
         {
             _userManager = userManager;
             _signInManager = signInManager;
-
         }
 
         [AllowAnonymous]
@@ -38,6 +37,7 @@ namespace WebApi.Controllers
                 Email = login.Email,
                 CodigoEmpresa = login.CodigoEmpresa,
 
+                //UserName = Guid.NewGuid().ToString(),
                 UserName = login.Email,
             };
 
@@ -62,36 +62,6 @@ namespace WebApi.Controllers
             else
             {
                 return Ok(resultConfirm.Errors);
-            }
-        }
-
-        [AllowAnonymous]
-        [Produces("application/json")]
-        [HttpPost("/api/CadastroEmpresaSistema")]
-        public async Task<IActionResult> CadastroEmpresaSistema([FromBody] Login login)
-        {
-            if (string.IsNullOrWhiteSpace(login.CodigoEmpresa))
-            {
-                return Ok("Falta o código da empresa");
-            }
-
-            var user = new ApplicationUser
-            {
-                Usuario = login.Usuario,
-                CodigoEmpresa = login.CodigoEmpresa,
-
-                UserName = login.Email,
-            };
-
-            var result = await _userManager.CreateAsync(user);
-
-            if (result.Succeeded)
-            {
-                return Ok("Usuário criado com sucesso usando o código da empresa");
-            }
-            else
-            {
-                return Ok(result.Errors);
             }
         }
     }

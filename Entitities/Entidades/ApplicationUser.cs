@@ -10,14 +10,16 @@ namespace Entitities.Entidades
         [Column("CodigoEmpresa")]
         public string CodigoEmpresa { get; set; }
 
-        [Display(Name = "Id do funcionario")]
-        [Column("Idfuncionario")]
-        public int Idfuncionario { get; set; }
+        [Display(Name = "Id do usuário")]
+        [Column("IdUsuario")]
+        public int IdUsuario { get; set; }
 
         [Display(Name = "Nome de usuário")]
         [Column("Usuario")]
         public string? Usuario { get; set; }
 
-        //public ICollection<UsuarioEmpresa> UsuarioEmpresa { get; set; }
+        [Display(Name = "Permissão de administrador")]
+        [Column("Admin")]
+        public bool Admin { get; set; }
     }
 }

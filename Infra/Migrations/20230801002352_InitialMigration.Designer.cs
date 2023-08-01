@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Migrations
 {
     [DbContext(typeof(ContextBase))]
-    [Migration("20230726194422_InitialMigration")]
+    [Migration("20230801002352_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -33,6 +33,10 @@ namespace Infra.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<bool>("Admin")
+                        .HasColumnType("bit")
+                        .HasColumnName("Admin");
+
                     b.Property<string>("CodigoEmpresa")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
@@ -49,9 +53,9 @@ namespace Infra.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Idfuncionario")
+                    b.Property<int>("IdUsuario")
                         .HasColumnType("int")
-                        .HasColumnName("Idfuncionario");
+                        .HasColumnName("IdUsuario");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
