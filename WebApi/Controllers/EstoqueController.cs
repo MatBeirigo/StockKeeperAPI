@@ -1,8 +1,5 @@
 ﻿using Domain.Interfaces.IEstoque;
-using Domain.Interfaces.IFornecedor;
 using Domain.Interfaces.InterfaceServicos;
-using Entitities.Entidades;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers

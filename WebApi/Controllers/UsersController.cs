@@ -35,8 +35,8 @@ namespace WebApi.Controllers
             {
                 Usuario = login.Usuario, 
                 Email = login.Email,
+                IdEmpresa = login.IdEmpresa,
                 CodigoEmpresa = login.CodigoEmpresa,
-
                 //UserName = Guid.NewGuid().ToString(),
                 UserName = login.Email,
             };
@@ -64,5 +64,26 @@ namespace WebApi.Controllers
                 return Ok(resultConfirm.Errors);
             }
         }
+
+        [AllowAnonymous]
+        [HttpPost("/api/EsqueciMinhaSenha")]
+        public async Task<IActionResult> EsqueciMinhaSenha([FromBody] string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+
+            if (user == null)
+            {
+                return Ok("E-mail não encontrado");
+            }
+
+            var code = await _userManager.GeneratePasswordResetTokenAsync(user);
+            code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+
+            // Envie o e-mail contendo o link seguro para redefinir a senha
+            // Exemplo: enviarEmailComLinkDeRedefinicao(email, code);
+
+            return Ok("E-mail de redefinição de senha enviado");
+        }
+
     }
 }

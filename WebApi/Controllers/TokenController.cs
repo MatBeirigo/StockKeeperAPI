@@ -23,14 +23,14 @@ namespace WebApi.Controllers
         [AllowAnonymous]
         [Produces("application/json")]
         [HttpPost("/api/CreateToken")]
-        public async Task<IActionResult> CreateToken([FromBody] InputModel Input)
+        public async Task<IActionResult> CreateToken([FromBody] InputModel Input, bool RememberMe)
         {
             if (string.IsNullOrWhiteSpace(Input.Email) || string.IsNullOrWhiteSpace(Input.Password))
             {
                 return Unauthorized();
             }
 
-            var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, false, lockoutOnFailure: false);
+            var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, RememberMe, lockoutOnFailure: false);
 
             if (result.Succeeded)
             {
@@ -40,7 +40,7 @@ namespace WebApi.Controllers
                     .AddIssuer("Teste.Securiry.Bearer")
                     .AddAudience("Teste.Securiry.Bearer")
                     .AddClaim("UsuarioAPINumero", "1")
-                    .AddExpiry(5)
+                    .AddExpiry(7)
                     .Build();
 
                 return Ok(token.Value);

@@ -10,6 +10,9 @@ namespace Entitities.Entidades
         [Column("CodigoEmpresa")]
         public string CodigoEmpresa { get; set; }
 
+        [Display(Name = "IdEmpresa")]
+        public int? IdEmpresa { get; set; }
+
         [Display(Name = "Id do usuário")]
         [Column("IdUsuario")]
         public int IdUsuario { get; set; }

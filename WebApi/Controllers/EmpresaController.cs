@@ -47,12 +47,11 @@ namespace WebApi.Controllers
                 {
                     Usuario = empresa.Nome,
                     Email = empresa.Email, 
+                    IdEmpresa = empresa.IdEmpresa,
                     CodigoEmpresa = empresa.CodigoEmpresa,
                     IdUsuario = 0,
-                    Admin = true,
-
-                    //UserName = Guid.NewGuid().ToString(),
                     UserName = empresa.Email,
+                    Admin = true,
                 };
 
                 var result = await _userManager.CreateAsync(user, "SenhaPadrao01$");
