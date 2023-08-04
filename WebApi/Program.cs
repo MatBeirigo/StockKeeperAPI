@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using WebApi.Token;
+using Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +34,8 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
     options.SignIn.RequireConfirmedAccount = true;
 })
     .AddEntityFrameworkStores<ContextBase>();
+
+builder.Services.AddSingleton<GetEmpresaUsuario>();
 
 //Interface e repositorio 
 builder.Services.AddSingleton(typeof(InterfaceGenerica<>), typeof(RepositoryGenerics<>));

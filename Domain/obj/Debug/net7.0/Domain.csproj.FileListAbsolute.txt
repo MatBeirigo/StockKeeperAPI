@@ -40,3 +40,5 @@ C:\Users\mathe\source\repos\StockKeeperApi\Domain\obj\Debug\net7.0\Domain.dll
 C:\Users\mathe\source\repos\StockKeeperApi\Domain\obj\Debug\net7.0\refint\Domain.dll
 C:\Users\mathe\source\repos\StockKeeperApi\Domain\obj\Debug\net7.0\Domain.pdb
 C:\Users\mathe\source\repos\StockKeeperApi\Domain\obj\Debug\net7.0\ref\Domain.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Domain\bin\Debug\net7.0\Helpers.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Domain\bin\Debug\net7.0\Helpers.pdb

@@ -79,8 +79,7 @@ namespace WebApi.Controllers
             var code = await _userManager.GeneratePasswordResetTokenAsync(user);
             code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
 
-            // Envie o e-mail contendo o link seguro para redefinir a senha
-            // Exemplo: enviarEmailComLinkDeRedefinicao(email, code);
+            // TODO: enviarEmailComLinkDeRedefinicao(email, code);
 
             return Ok("E-mail de redefinição de senha enviado");
         }

@@ -49,3 +49,5 @@ C:\Users\mathe\source\repos\StockKeeperApi\Infra\obj\Debug\net7.0\Infra.dll
 C:\Users\mathe\source\repos\StockKeeperApi\Infra\obj\Debug\net7.0\refint\Infra.dll
 C:\Users\mathe\source\repos\StockKeeperApi\Infra\obj\Debug\net7.0\Infra.pdb
 C:\Users\mathe\source\repos\StockKeeperApi\Infra\obj\Debug\net7.0\ref\Infra.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\bin\Debug\net7.0\Helpers.dll
+C:\Users\mathe\source\repos\StockKeeperApi\Infra\bin\Debug\net7.0\Helpers.pdb

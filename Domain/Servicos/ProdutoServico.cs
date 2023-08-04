@@ -1,7 +1,8 @@
 ﻿using Domain.Interfaces.IEstoque;
 using Domain.Interfaces.InterfaceServicos;
 using Domain.Interfaces.IProduto;
-using Entitities.Enums;
+using Helpers;
+using Microsoft.AspNetCore.Http;
 
 namespace Domain.Servicos
 {
@@ -9,21 +10,28 @@ namespace Domain.Servicos
     {
         private readonly InterfaceProduto _produtoInterface;
         private readonly InterfaceEstoque _estoqueInterface;
+        private readonly GetEmpresaUsuario _getEmpresaUsuario;
 
-        public ProdutoServico(InterfaceProduto produtoRepositorio, InterfaceEstoque interfaceRepositorio)
+        public ProdutoServico(
+            InterfaceProduto produtoRepositorio, 
+            InterfaceEstoque interfaceRepositorio, 
+            GetEmpresaUsuario getEmpresaUsuario)
         {
             _produtoInterface = produtoRepositorio;
             _estoqueInterface = interfaceRepositorio;
+            _getEmpresaUsuario = getEmpresaUsuario;
         }
 
         public async Task AdicionarProduto(Produto produto)
         {
             try
             {
+                var idEmpresa = _getEmpresaUsuario.GetIdEmpresaUsuario();
+
                 Estoque estoque = new Estoque
                 {
                     Id = produto.Id,
-                    IdEmpresa = produto.IdEmpresa,
+                    IdEmpresa = idEmpresa,
                     IdAlteracao = 0,
                     Produto = produto.NomeProduto,
                     QuantidadeEstoque = 0,
@@ -39,7 +47,6 @@ namespace Domain.Servicos
                 Console.WriteLine($"Ocorreu um erro ao adicionar o produto: {ex.Message}");
             }
         }
-
 
         public async Task AtualizarProduto(Produto produto)
         {
